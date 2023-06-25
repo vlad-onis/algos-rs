@@ -64,6 +64,27 @@ impl Version1 {
     }
 }
 
+/// This solution beats 59% in O(n)
+pub struct Version2 {}
+
+impl Version2 {
+    pub fn remove_duplicates(nums: &mut Vec<i32>) -> i32 {
+        if nums.is_empty() {
+            return 0;
+        }
+
+        let mut j = 0;
+        for i in 1..nums.len() {
+            if nums[i] != nums[j] {
+                j += 1;
+                nums[j] = nums[i];
+            }
+        }
+
+        (j + 1) as i32
+    }
+}
+
 #[cfg(test)]
 mod tests {
 
