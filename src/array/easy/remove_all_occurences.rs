@@ -2,15 +2,13 @@
 /// The order of the elements may be changed. Then return the number of elements in nums which are not equal to val.
 
 /// Uses in-build methods from vec to solve the problem
+#[allow(dead_code)]
 pub fn remove_element_retain(nums: &mut Vec<i32>, val: i32) -> i32 {
     nums.retain(|element| *element != val);
     nums.len() as i32
 }
 
-// v = 1
-// [1s, 1e]
-// [1o, 1]
-
+#[allow(dead_code)]
 pub fn remove_element_pointers(nums: &mut Vec<i32>, val: i32) -> i32 {
     if nums.is_empty() {
         return 0;
