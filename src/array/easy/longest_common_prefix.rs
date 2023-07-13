@@ -27,7 +27,7 @@ pub fn longest_common_prefix(strs: Vec<String>) -> String {
 
     for word in &strs {
         let mut upper_limit = lcp.len();
-        while !word.contains(lcp) {
+        while !word.starts_with(lcp) {
             if upper_limit == 0 {
                 return String::from("");
             }
@@ -42,8 +42,6 @@ pub fn longest_common_prefix(strs: Vec<String>) -> String {
 
 #[cfg(test)]
 pub mod lcp_tests {
-
-    use std::ascii::AsciiExt;
 
     use super::*;
 
@@ -85,6 +83,18 @@ pub mod lcp_tests {
     #[test]
     pub fn test_no_common_prefix() {
         let strs = vec!["flower".to_string(), "flow".to_string(), "test".to_string()];
+
+        let res = longest_common_prefix(strs);
+        assert_eq!(res, "".to_ascii_lowercase());
+    }
+
+    #[test]
+    pub fn test_no_common_prefix_but_common_word() {
+        let strs = vec![
+            "reflower".to_string(),
+            "flow".to_string(),
+            "flight".to_string(),
+        ];
 
         let res = longest_common_prefix(strs);
         assert_eq!(res, "".to_ascii_lowercase());
