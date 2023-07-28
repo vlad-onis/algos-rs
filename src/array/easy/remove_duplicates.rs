@@ -65,11 +65,9 @@ impl Version1 {
 }
 
 /// This solution beats 59% in O(n)
-#[allow(dead_code)]
 pub struct Version2 {}
 
 impl Version2 {
-    #[allow(dead_code)]
     pub fn remove_duplicates(nums: &mut Vec<i32>) -> i32 {
         if nums.is_empty() {
             return 0;
