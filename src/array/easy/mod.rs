@@ -11,6 +11,7 @@ pub mod pascal_triangle_2;
 pub mod plus_one;
 pub mod remove_all_occurences;
 pub mod remove_duplicates;
+pub mod replace_elements_with_greatest;
 pub mod roman_to_integer;
 pub mod search_insert_position;
 pub mod single_number;
