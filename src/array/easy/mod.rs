@@ -6,6 +6,7 @@ pub mod longest_common_prefix;
 pub mod majority_element;
 pub mod merge_sorted_arrays;
 pub mod missing_ranges;
+pub mod move_zeros;
 pub mod pascal_triangle;
 pub mod pascal_triangle_2;
 pub mod plus_one;
