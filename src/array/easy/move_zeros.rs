@@ -20,6 +20,25 @@ pub fn move_zeroes(nums: &mut Vec<i32>) {
     nums[starting_index..].fill(0);
 }
 
+pub fn move_zeros_2_pointers(nums: &mut Vec<i32>) {
+    let mut index = 0;
+    let mut zero_searcher = 0;
+
+    while index < nums.len() {
+        if nums[index] != 0 {
+            let temp = nums[zero_searcher];
+            nums[zero_searcher] = nums[index];
+            nums[index] = temp;
+
+            index += 1;
+            zero_searcher += 1;
+
+        } else {
+            index += 1;
+        }
+    }
+}
+
 #[cfg(test)]
 pub mod move_zeros_tests {
     use super::*;
@@ -29,12 +48,20 @@ pub mod move_zeros_tests {
         let mut nums = vec![1, 2, 3, 0, 4, 0, 5, 6, 7, 8];
         move_zeroes(&mut nums);
         assert_eq!(nums, vec![1, 2, 3, 4, 5, 6, 7, 8, 0, 0]);
+
+        let mut nums = vec![1, 2, 3, 0, 4, 0, 5, 6, 7, 8];
+        move_zeros_2_pointers(&mut nums);
+        assert_eq!(nums, vec![1, 2, 3, 4, 5, 6, 7, 8, 0, 0]);
     }
 
     #[test]
     pub fn test_leetcode1() {
         let mut nums = vec![0, 0, 1];
         move_zeroes(&mut nums);
+        assert_eq!(nums, vec![1, 0, 0]);
+
+        let mut nums = vec![0, 0, 1];
+        move_zeros_2_pointers(&mut nums);
         assert_eq!(nums, vec![1, 0, 0]);
     }
 }
