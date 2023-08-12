@@ -16,4 +16,5 @@ pub mod replace_elements_with_greatest;
 pub mod roman_to_integer;
 pub mod search_insert_position;
 pub mod single_number;
+pub mod sort_by_parity;
 // TODO: There are more ways to implement Longest common prefix, implement them all: vertical, holizontal, binary search etc
