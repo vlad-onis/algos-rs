@@ -32,7 +32,6 @@ pub fn move_zeros_2_pointers(nums: &mut Vec<i32>) {
 
             index += 1;
             zero_searcher += 1;
-
         } else {
             index += 1;
         }

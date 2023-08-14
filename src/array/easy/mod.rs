@@ -1,6 +1,7 @@
 pub mod buy_stock_profit;
 pub mod check_n_and_double;
 pub mod first_occurence;
+pub mod heights_checker;
 pub mod length_of_last_word;
 pub mod longest_common_prefix;
 pub mod majority_element;
