@@ -12,6 +12,7 @@ pub mod missing_ranges;
 pub mod move_zeros;
 pub mod pascal_triangle;
 pub mod pascal_triangle_2;
+pub mod pivot_index;
 pub mod plus_one;
 pub mod remove_all_occurences;
 pub mod remove_duplicates;
