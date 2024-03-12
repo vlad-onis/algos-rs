@@ -3,6 +3,7 @@ pub mod check_n_and_double;
 pub mod find_disappeared_numbers;
 pub mod first_occurence;
 pub mod heights_checker;
+pub mod largest_at_least_twice;
 pub mod length_of_last_word;
 pub mod longest_common_prefix;
 pub mod majority_element;
