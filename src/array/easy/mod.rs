@@ -1,3 +1,4 @@
+pub mod array_partition;
 pub mod buy_stock_profit;
 pub mod check_n_and_double;
 pub mod find_disappeared_numbers;

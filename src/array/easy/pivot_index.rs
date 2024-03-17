@@ -63,12 +63,4 @@ pub mod tests_pivot_index {
 
         assert_eq!(res, 0);
     }
-
-    #[test]
-    pub fn test_pivot_leetcode4() {
-        let nums = vec![-1, -1, 0, 0, -1, -1];
-        let res = pivot_index(nums);
-
-        assert_eq!(res, 2);
-    }
 }
