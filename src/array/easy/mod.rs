@@ -24,4 +24,5 @@ pub mod search_insert_position;
 pub mod single_number;
 pub mod sort_by_parity;
 pub mod third_distinct_max;
+pub mod two_sum_2;
 // TODO: There are more ways to implement Longest common prefix, implement them all: vertical, holizontal, binary search etc
