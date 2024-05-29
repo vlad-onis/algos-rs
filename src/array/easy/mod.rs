@@ -8,6 +8,7 @@ pub mod largest_at_least_twice;
 pub mod length_of_last_word;
 pub mod longest_common_prefix;
 pub mod majority_element;
+pub mod max_average_subarray_1;
 pub mod max_consecutive_ones_2;
 pub mod merge_sorted_arrays;
 pub mod missing_ranges;
