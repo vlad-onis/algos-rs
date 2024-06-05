@@ -2,6 +2,25 @@ use std::collections::HashMap;
 
 /// https://leetcode.com/problems/find-players-with-zero-or-one-losses/description/
 
+pub fn insert_sorted(arr: &mut Vec<i32>, value: i32) {
+    if arr.is_empty() {
+        arr.push(value);
+    } else if value > arr[arr.len() - 1] {
+        arr.push(value);
+    } else {
+        for i in 0..arr.len() {
+            if value <= arr[i] {
+                arr.insert(i, value);
+                return;
+            }
+            // if value > arr[i] && value <= arr[i + 1] {
+            //     arr.insert(i + 1, value);
+            //     return;
+            // }
+        }
+    }
+}
+
 pub fn find_winners(matches: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
     // Map<player_id, (wins, losses)>
     let mut player_map: HashMap<i32, (i32, i32)> = HashMap::new();
@@ -44,9 +63,9 @@ pub fn find_winners(matches: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
 
     for (player, stats) in player_map {
         if stats.1 == 0 {
-            res[0].push(player);
+            insert_sorted(&mut res[0], player);
         } else if stats.1 == 1 {
-            res[1].push(player);
+            insert_sorted(&mut res[1], player);
         }
     }
 
@@ -60,6 +79,19 @@ pub fn find_winners(matches: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
 pub mod tests_find_winners {
 
     use super::*;
+
+    #[test]
+    pub fn test_insert_sorted() {
+        let mut arr = Vec::new();
+
+        insert_sorted(&mut arr, 5);
+        insert_sorted(&mut arr, 4);
+        insert_sorted(&mut arr, 8);
+        insert_sorted(&mut arr, 7);
+        insert_sorted(&mut arr, 6);
+        insert_sorted(&mut arr, 3);
+        insert_sorted(&mut arr, 10);
+    }
 
     #[test]
     pub fn test_leetcode1() {
